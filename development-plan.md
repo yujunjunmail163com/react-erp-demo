@@ -45,26 +45,26 @@
 
 ## 阶段三：React Router 和后台 Layout
 
-状态：待开始
+状态：已完成
 
-- [ ] 创建 `router/index.jsx`
-- [ ] 配置 `/login` 路由
-- [ ] 配置 `/home` 路由
-- [ ] 创建或完善 `pages/Home.jsx`
-- [ ] 使用 Ant Design `Layout` 实现后台整体布局
-- [ ] 实现左侧菜单区域
-- [ ] 左侧菜单先放一个“用户管理”
-- [ ] 实现顶部栏区域
-- [ ] 实现内容区区域
-- [ ] 实现未登录访问 `/home` 时跳转到 `/login`
-- [ ] 实现登录后默认进入 `/home`
-- [ ] 实现退出登录并清除 token
-- [ ] 理解 `BrowserRouter`
-- [ ] 理解 `Routes`
-- [ ] 理解 `Route`
-- [ ] 理解 `Navigate`
-- [ ] 理解 React Router 路由守卫思路
-- [ ] 对比 React Router 和 Vue Router 的区别
+- [x] 创建 `router/index.jsx`
+- [x] 配置 `/login` 路由
+- [x] 配置 `/home` 路由
+- [x] 创建或完善 `pages/Home.jsx`
+- [x] 使用 Ant Design `Layout` 实现后台整体布局
+- [x] 实现左侧菜单区域
+- [x] 左侧菜单先放一个“用户管理”
+- [x] 实现顶部栏区域
+- [x] 实现内容区区域
+- [x] 实现未登录访问 `/home` 时跳转到 `/login`
+- [x] 实现登录后默认进入 `/home`
+- [x] 实现退出登录并清除 token
+- [x] 理解 `BrowserRouter`
+- [x] 理解 `Routes`
+- [x] 理解 `Route`
+- [x] 理解 `Navigate`
+- [x] 理解 React Router 路由守卫思路
+- [x] 对比 React Router 和 Vue Router 的区别
 
 ## 阶段四：用户列表页
 
@@ -178,8 +178,8 @@
 
 - [x] 项目能够启动
 - [x] 已完成登录页
-- [ ] 登录后能够进入后台 Layout
-- [ ] 未登录访问后台页面会回到登录页
+- [x] 登录后能够进入后台 Layout
+- [x] 未登录访问后台页面会回到登录页
 - [ ] 用户列表能够展示
 - [ ] 用户列表能够查询
 - [ ] 用户能够新增
@@ -198,7 +198,7 @@
 - [ ] key / rowKey：用户表格
 - [ ] state 不可变更新：删除、新增、编辑用户
 - [x] React Router：登录后跳转
-- [ ] 路由访问控制：token 判断
+- [x] 路由访问控制：token 判断
 - [ ] Axios 封装：`utils/request.js` 和 `api/user.js`
 - [ ] `useMemo`：缓存表格列或过滤结果
 - [ ] `useCallback`：缓存事件函数

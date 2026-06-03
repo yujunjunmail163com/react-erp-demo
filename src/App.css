@@ -1,5 +1,4 @@
-.login-page,
-.home-page {
+.login-page {
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -8,12 +7,44 @@
   background: #f5f7fb;
 }
 
-.login-card,
-.home-card {
+.login-card {
   width: 420px;
   max-width: 100%;
 }
 
 .login-form {
   margin-top: 24px;
+}
+
+.admin-layout {
+  min-height: 100vh;
+}
+
+.admin-sider {
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08);
+}
+
+.admin-logo {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.admin-header {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.admin-content {
+  padding: 24px;
+  background: #f5f7fb;
 }

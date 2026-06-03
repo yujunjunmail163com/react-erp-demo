@@ -1,16 +1,9 @@
-import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
-import Home from './pages/Home'
-import Login from './pages/Login'
+import AppRouter from './router/index.jsx'
 
 function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<Navigate to="/login" replace />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/home" element={<Home />} />
-    </Routes>
-  )
+  // App 作为根组件，当前只负责挂载路由模块。
+  return <AppRouter />
 }
 
 export default App
