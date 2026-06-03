@@ -91,24 +91,24 @@
 
 ## 阶段五：新增 / 编辑用户弹窗
 
-状态：待开始
+状态：已完成
 
-- [ ] 创建 `components/UserModal.jsx`
-- [ ] 在 `UserList` 中控制弹窗打开和关闭
-- [ ] 点击新增时打开空表单
-- [ ] 点击编辑时打开弹窗并回显当前行数据
-- [ ] 使用 Ant Design `Modal`
-- [ ] 使用 Ant Design `Form`
-- [ ] 实现新增用户保存
-- [ ] 实现编辑用户保存
-- [ ] 保存后更新用户列表
-- [ ] 子组件通过 `onCancel` 通知父组件关闭弹窗
-- [ ] 子组件通过 `onSuccess` 通知父组件保存数据
-- [ ] 理解组件拆分
-- [ ] 理解 props 父传子
-- [ ] 理解回调函数子传父
-- [ ] 理解父子组件通信
-- [ ] 理解 Ant Design Form 表单回显
+- [x] 创建 `components/UserModal.jsx`
+- [x] 在 `UserList` 中控制弹窗打开和关闭
+- [x] 点击新增时打开空表单
+- [x] 点击编辑时打开弹窗并回显当前行数据
+- [x] 使用 Ant Design `Modal`
+- [x] 使用 Ant Design `Form`
+- [x] 实现新增用户保存
+- [x] 实现编辑用户保存
+- [x] 保存后更新用户列表
+- [x] 子组件通过 `onCancel` 通知父组件关闭弹窗
+- [x] 子组件通过 `onSuccess` 通知父组件保存数据
+- [x] 理解组件拆分
+- [x] 理解 props 父传子
+- [x] 理解回调函数子传父
+- [x] 理解父子组件通信
+- [x] 理解 Ant Design Form 表单回显
 
 ## 阶段六：Axios 请求封装
 
@@ -182,8 +182,8 @@
 - [x] 未登录访问后台页面会回到登录页
 - [x] 用户列表能够展示
 - [x] 用户列表能够查询
-- [ ] 用户能够新增
-- [ ] 用户能够编辑
+- [x] 用户能够新增
+- [x] 用户能够编辑
 - [x] 用户能够删除
 - [ ] Axios 封装完成
 - [ ] 所有核心 React 面试点都有项目场景支撑
@@ -194,9 +194,9 @@
 - [x] `useState`：登录表单、输入状态
 - [x] `useEffect`：用户列表初始化
 - [x] 受控组件：登录输入框
-- [ ] 组件通信：`UserList` 和 `UserModal`
+- [x] 组件通信：`UserList` 和 `UserModal`
 - [x] key / rowKey：用户表格
-- [x] state 不可变更新：删除用户
+- [x] state 不可变更新：新增、编辑、删除用户
 - [x] React Router：登录后跳转
 - [x] 路由访问控制：token 判断
 - [ ] Axios 封装：`utils/request.js` 和 `api/user.js`
