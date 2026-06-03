@@ -1,20 +1,21 @@
-import { LogoutOutlined, TeamOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Card, Layout, Menu, Space, Typography } from "antd";
-import { useNavigate } from "react-router-dom";
+import { LogoutOutlined, TeamOutlined, UserOutlined } from '@ant-design/icons'
+import { Button, Layout, Menu, Space, Typography } from 'antd'
+import { useNavigate } from 'react-router-dom'
+import UserList from './UserList'
 
-const { Header, Sider, Content } = Layout;
-const { Title, Paragraph, Text } = Typography;
+const { Header, Sider, Content } = Layout
+const { Text } = Typography
 
 function Home() {
-  const navigate = useNavigate();
-  const username = localStorage.getItem("username") || "未登录用户";
+  const navigate = useNavigate()
+  const username = localStorage.getItem('username') || '未登录用户'
 
   const handleLogout = () => {
     // 退出登录时清理本地登录态，再用 replace 跳转，避免浏览器后退回到后台页。
-    localStorage.removeItem("token");
-    localStorage.removeItem("username");
-    navigate("/login", { replace: true });
-  };
+    localStorage.removeItem('token')
+    localStorage.removeItem('username')
+    navigate('/login', { replace: true })
+  }
 
   return (
     <Layout className="admin-layout">
@@ -24,12 +25,12 @@ function Home() {
         <Menu
           theme="dark"
           mode="inline"
-          selectedKeys={["users"]}
+          selectedKeys={['users']}
           items={[
             {
-              key: "users",
+              key: 'users',
               icon: <TeamOutlined />,
-              label: "用户管理",
+              label: '用户管理',
             },
           ]}
         />
@@ -48,16 +49,12 @@ function Home() {
         </Header>
 
         <Content className="admin-content">
-          <Card>
-            <Title level={3}>后台首页</Title>
-            <Paragraph>
-              阶段三完成后，这里就是后台内容区。下一阶段会在这里接入用户列表。
-            </Paragraph>
-          </Card>
+          {/* 阶段四先固定展示用户列表；后续可扩展为多菜单、多路由内容区。 */}
+          <UserList />
         </Content>
       </Layout>
     </Layout>
-  );
+  )
 }
 
-export default Home;
+export default Home

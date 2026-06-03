@@ -48,3 +48,19 @@
   padding: 24px;
   background: #f5f7fb;
 }
+
+.user-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.user-list-header h3 {
+  margin: 0;
+}
+
+.user-search-form {
+  margin-bottom: 20px;
+}

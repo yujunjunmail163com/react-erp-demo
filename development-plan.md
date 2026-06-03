@@ -68,26 +68,26 @@
 
 ## 阶段四：用户列表页
 
-状态：待开始
+状态：已完成
 
-- [ ] 创建 `pages/UserList.jsx`
-- [ ] 在 `Home.jsx` 内容区展示 `UserList`
-- [ ] 使用本地数组模拟用户数据
-- [ ] 页面加载时初始化用户列表数据
-- [ ] 使用 Ant Design `Table` 展示用户列表
-- [ ] 为 `Table` 设置 `rowKey`
-- [ ] 使用 Ant Design `Form` 实现查询区域
-- [ ] 使用 Ant Design `Input` 实现用户名查询
-- [ ] 使用 Ant Design `Button` 实现查询按钮
-- [ ] 支持按用户名筛选用户列表
-- [ ] 每一行展示编辑按钮
-- [ ] 每一行展示删除按钮
-- [ ] 使用 Ant Design `Popconfirm` 做删除确认
-- [ ] 支持删除用户
-- [ ] 理解 `useEffect`
-- [ ] 理解列表渲染中的 `key`
-- [ ] 理解 `Table rowKey`
-- [ ] 理解为什么 React state 更新不能直接修改原数组
+- [x] 创建 `pages/UserList.jsx`
+- [x] 在 `Home.jsx` 内容区展示 `UserList`
+- [x] 使用本地数组模拟用户数据
+- [x] 页面加载时初始化用户列表数据
+- [x] 使用 Ant Design `Table` 展示用户列表
+- [x] 为 `Table` 设置 `rowKey`
+- [x] 使用 Ant Design `Form` 实现查询区域
+- [x] 使用 Ant Design `Input` 实现用户名查询
+- [x] 使用 Ant Design `Button` 实现查询按钮
+- [x] 支持按用户名筛选用户列表
+- [x] 每一行展示编辑按钮
+- [x] 每一行展示删除按钮
+- [x] 使用 Ant Design `Popconfirm` 做删除确认
+- [x] 支持删除用户
+- [x] 理解 `useEffect`
+- [x] 理解列表渲染中的 `key`
+- [x] 理解 `Table rowKey`
+- [x] 理解为什么 React state 更新不能直接修改原数组
 
 ## 阶段五：新增 / 编辑用户弹窗
 
@@ -180,11 +180,11 @@
 - [x] 已完成登录页
 - [x] 登录后能够进入后台 Layout
 - [x] 未登录访问后台页面会回到登录页
-- [ ] 用户列表能够展示
-- [ ] 用户列表能够查询
+- [x] 用户列表能够展示
+- [x] 用户列表能够查询
 - [ ] 用户能够新增
 - [ ] 用户能够编辑
-- [ ] 用户能够删除
+- [x] 用户能够删除
 - [ ] Axios 封装完成
 - [ ] 所有核心 React 面试点都有项目场景支撑
 
@@ -192,11 +192,11 @@
 
 - [x] 函数组件：`App`、`Login`、`Home`
 - [x] `useState`：登录表单、输入状态
-- [ ] `useEffect`：用户列表初始化
+- [x] `useEffect`：用户列表初始化
 - [x] 受控组件：登录输入框
 - [ ] 组件通信：`UserList` 和 `UserModal`
-- [ ] key / rowKey：用户表格
-- [ ] state 不可变更新：删除、新增、编辑用户
+- [x] key / rowKey：用户表格
+- [x] state 不可变更新：删除用户
 - [x] React Router：登录后跳转
 - [x] 路由访问控制：token 判断
 - [ ] Axios 封装：`utils/request.js` 和 `api/user.js`
