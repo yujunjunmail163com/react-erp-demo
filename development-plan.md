@@ -112,23 +112,23 @@
 
 ## 阶段六：Axios 请求封装
 
-状态：待开始
+状态：已完成
 
-- [ ] 创建 `utils/request.js`
-- [ ] 创建 `api/user.js`
-- [ ] 封装 Axios 实例
-- [ ] 配置请求基础参数
-- [ ] 在请求拦截器中自动携带 token
-- [ ] 在响应拦截器中统一处理响应数据
-- [ ] 在响应拦截器中统一处理错误
-- [ ] 使用 `Promise + setTimeout` 模拟用户列表接口
-- [ ] 使用 `Promise + setTimeout` 模拟新增用户接口
-- [ ] 使用 `Promise + setTimeout` 模拟编辑用户接口
-- [ ] 使用 `Promise + setTimeout` 模拟删除用户接口
-- [ ] 将 `UserList` 中的本地操作迁移为调用 `api/user.js`
-- [ ] 理解 Axios 封装在 React 项目中的组织方式
-- [ ] 对比 Axios 封装在 React 和 Vue 项目中的相同点
-- [ ] 对比 Axios 封装在 React 和 Vue 项目中的不同点
+- [x] 创建 `utils/request.js`
+- [x] 创建 `api/user.js`
+- [x] 封装 Axios 实例
+- [x] 配置请求基础参数
+- [x] 在请求拦截器中自动携带 token
+- [x] 在响应拦截器中统一处理响应数据
+- [x] 在响应拦截器中统一处理错误
+- [x] 使用 `Promise + setTimeout` 模拟用户列表接口
+- [x] 使用 `Promise + setTimeout` 模拟新增用户接口
+- [x] 使用 `Promise + setTimeout` 模拟编辑用户接口
+- [x] 使用 `Promise + setTimeout` 模拟删除用户接口
+- [x] 将 `UserList` 中的本地操作迁移为调用 `api/user.js`
+- [x] 理解 Axios 封装在 React 项目中的组织方式
+- [x] 对比 Axios 封装在 React 和 Vue 项目中的相同点
+- [x] 对比 Axios 封装在 React 和 Vue 项目中的不同点
 
 ## 阶段七：补充 useMemo / useCallback / React.memo
 
@@ -185,7 +185,7 @@
 - [x] 用户能够新增
 - [x] 用户能够编辑
 - [x] 用户能够删除
-- [ ] Axios 封装完成
+- [x] Axios 封装完成
 - [ ] 所有核心 React 面试点都有项目场景支撑
 
 ## 面试点映射清单
@@ -199,7 +199,7 @@
 - [x] state 不可变更新：新增、编辑、删除用户
 - [x] React Router：登录后跳转
 - [x] 路由访问控制：token 判断
-- [ ] Axios 封装：`utils/request.js` 和 `api/user.js`
+- [x] Axios 封装：`utils/request.js` 和 `api/user.js`
 - [ ] `useMemo`：缓存表格列或过滤结果
 - [ ] `useCallback`：缓存事件函数
 - [ ] `React.memo`：减少子组件无意义渲染
