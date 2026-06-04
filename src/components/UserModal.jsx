@@ -1,5 +1,5 @@
 import { Form, Input, Modal, Select } from 'antd'
-import { useEffect } from 'react'
+import { memo, useEffect } from 'react'
 
 
 /**
@@ -99,4 +99,5 @@ function UserModal({ open, currentUser, onCancel, onSuccess }) {
   )
 }
 
-export default UserModal
+// memo 会在 props 没有变化时跳过子组件重复渲染，常和 useCallback 配合使用。
+export default memo(UserModal)

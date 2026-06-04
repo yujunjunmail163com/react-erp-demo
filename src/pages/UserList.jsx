@@ -11,7 +11,7 @@ import {
   Typography,
   message,
 } from 'antd'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import {
   createUser,
   deleteUser,
@@ -57,7 +57,8 @@ function UserList() {
     }
   }, [])
 
-  const fetchUserList = async (params = form.getFieldsValue()) => {
+  // useCallback 缓存函数引用，方便其他回调稳定依赖它。
+  const fetchUserList = useCallback(async (params = form.getFieldsValue()) => {
     setLoading(true)
 
     try {
@@ -66,35 +67,36 @@ function UserList() {
     } finally {
       setLoading(false)
     }
-  }
+  }, [form])
 
-  const handleSearch = (values) => {
+  const handleSearch = useCallback((values) => {
     fetchUserList(values)
-  }
+  }, [fetchUserList])
 
-  const handleReset = () => {
+  const handleReset = useCallback(() => {
     form.resetFields()
     fetchUserList({})
-  }
+  }, [fetchUserList, form])
 
-  const handleAdd = () => {
+  const handleAdd = useCallback(() => {
     // currentUser 为 null 表示新增模式。
     setCurrentUser(null)
     setModalOpen(true)
-  }
+  }, [])
 
-  const handleEdit = (record) => {
+  const handleEdit = useCallback((record) => {
     // currentUser 有值表示编辑模式，子组件会根据它做表单回显。
     setCurrentUser(record)
     setModalOpen(true)
-  }
+  }, [])
 
-  const handleCancelModal = () => {
+  // 这个函数会传给 memo 后的 UserModal，稳定引用可以减少无意义渲染。
+  const handleCancelModal = useCallback(() => {
     setModalOpen(false)
     setCurrentUser(null)
-  }
+  }, [])
 
-  const handleSaveUser = async (values) => {
+  const handleSaveUser = useCallback(async (values) => {
     if (currentUser) {
       await updateUser(currentUser.id, values)
       message.success('编辑成功')
@@ -106,16 +108,17 @@ function UserList() {
     handleCancelModal()
     // 新增/编辑后重新拉取列表，保持页面数据和接口数据源一致。
     fetchUserList()
-  }
+  }, [currentUser, fetchUserList, handleCancelModal])
 
-  const handleDelete = async (id) => {
+  const handleDelete = useCallback(async (id) => {
     await deleteUser(id)
     message.success('删除成功')
     // 删除后重新拉取当前查询条件下的列表。
     fetchUserList()
-  }
+  }, [fetchUserList])
 
-  const columns = [
+  // columns 是对象数组；用 useMemo 避免父组件每次渲染都创建新 columns 引用。
+  const columns = useMemo(() => [
     {
       title: 'ID',
       dataIndex: 'id',
@@ -162,7 +165,7 @@ function UserList() {
         </Space>
       ),
     },
-  ]
+  ], [handleDelete, handleEdit])
 
   return (
     <Card>

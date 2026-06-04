@@ -132,19 +132,19 @@
 
 ## 阶段七：补充 useMemo / useCallback / React.memo
 
-状态：待开始
+状态：已完成
 
-- [ ] 找到用户列表中的真实优化场景
-- [ ] 使用 `useMemo` 缓存 `Table columns`
-- [ ] 使用 `useMemo` 缓存过滤后的用户列表
-- [ ] 使用 `useCallback` 缓存传给子组件的事件函数
-- [ ] 使用 `React.memo` 包装合适的子组件
-- [ ] 验证优化不影响现有功能
-- [ ] 理解 `React.memo` 的作用
-- [ ] 理解 `useMemo` 的作用
-- [ ] 理解 `useCallback` 的作用
-- [ ] 理解三者的区别：组件、计算结果、函数引用
-- [ ] 整理面试中如何回答性能优化 Hooks
+- [x] 找到用户列表中的真实优化场景
+- [x] 使用 `useMemo` 缓存 `Table columns`
+- [x] 评估过滤列表缓存场景：当前查询已迁移到 API 层，暂不额外使用
+- [x] 使用 `useCallback` 缓存传给子组件的事件函数
+- [x] 使用 `React.memo` 包装合适的子组件
+- [x] 验证优化不影响现有功能
+- [x] 理解 `React.memo` 的作用
+- [x] 理解 `useMemo` 的作用
+- [x] 理解 `useCallback` 的作用
+- [x] 理解三者的区别：组件、计算结果、函数引用
+- [x] 整理面试中如何回答性能优化 Hooks
 
 ## 阶段八：React 和 Vue 对比总结
 
@@ -186,7 +186,7 @@
 - [x] 用户能够编辑
 - [x] 用户能够删除
 - [x] Axios 封装完成
-- [ ] 所有核心 React 面试点都有项目场景支撑
+- [x] 所有核心 React 面试点都有项目场景支撑
 
 ## 面试点映射清单
 
@@ -200,7 +200,7 @@
 - [x] React Router：登录后跳转
 - [x] 路由访问控制：token 判断
 - [x] Axios 封装：`utils/request.js` 和 `api/user.js`
-- [ ] `useMemo`：缓存表格列或过滤结果
-- [ ] `useCallback`：缓存事件函数
-- [ ] `React.memo`：减少子组件无意义渲染
+- [x] `useMemo`：缓存表格列或过滤结果
+- [x] `useCallback`：缓存事件函数
+- [x] `React.memo`：减少子组件无意义渲染
 - [ ] React 和 Vue 对比表达
