@@ -23,12 +23,22 @@ import UserModal from '../components/UserModal'
 const { Title } = Typography
 
 function UserList() {
+  // AntD Form 实例，用来读取表单值、重置表单。
   const [form] = Form.useForm()
+
+  // 表格数据。React 中数据变化后必须通过 setUserList 通知组件重新渲染。
   const [userList, setUserList] = useState([])
+
+  // 表格加载状态，和业务数据分开维护，方便控制 Table 的 loading。
   const [loading, setLoading] = useState(false)
+
+  // 控制新增/编辑弹窗是否显示。
   const [modalOpen, setModalOpen] = useState(false)
+
+  // 当前正在编辑的用户；为 null 时表示新增模式。
   const [currentUser, setCurrentUser] = useState(null)
 
+  // 组件首次挂载后加载用户列表。空依赖数组 [] 表示只执行一次。
   useEffect(() => {
     let ignore = false
 
@@ -53,6 +63,7 @@ function UserList() {
 
     return () => {
       // 如果请求还没回来组件就卸载了，避免继续 setState。
+      // 这是处理异步请求时常见的防护写法。
       ignore = true
     }
   }, [])
@@ -62,6 +73,7 @@ function UserList() {
     setLoading(true)
 
     try {
+      // 页面组件只调用 api 方法，不关心接口内部是 axios 还是真实 mock。
       const data = await getUserList(params)
       setUserList(data)
     } finally {
@@ -69,21 +81,25 @@ function UserList() {
     }
   }, [form])
 
+  // 查询表单提交后，用表单值作为接口查询参数。
   const handleSearch = useCallback((values) => {
     fetchUserList(values)
   }, [fetchUserList])
 
+  // 重置表单后重新请求完整列表。
   const handleReset = useCallback(() => {
     form.resetFields()
     fetchUserList({})
   }, [fetchUserList, form])
 
+  // 打开新增弹窗。
   const handleAdd = useCallback(() => {
     // currentUser 为 null 表示新增模式。
     setCurrentUser(null)
     setModalOpen(true)
   }, [])
 
+  // 打开编辑弹窗，并把当前行数据交给弹窗回显。
   const handleEdit = useCallback((record) => {
     // currentUser 有值表示编辑模式，子组件会根据它做表单回显。
     setCurrentUser(record)
@@ -96,6 +112,7 @@ function UserList() {
     setCurrentUser(null)
   }, [])
 
+  // 弹窗保存：根据 currentUser 判断是新增还是编辑。
   const handleSaveUser = useCallback(async (values) => {
     if (currentUser) {
       await updateUser(currentUser.id, values)
@@ -110,6 +127,7 @@ function UserList() {
     fetchUserList()
   }, [currentUser, fetchUserList, handleCancelModal])
 
+  // 删除后重新请求列表，保持页面状态和接口数据源一致。
   const handleDelete = useCallback(async (id) => {
     await deleteUser(id)
     message.success('删除成功')
@@ -139,6 +157,7 @@ function UserList() {
     {
       title: '状态',
       dataIndex: 'status',
+      // render 用来自定义单元格渲染，这里把状态显示成 Tag。
       render: (status) => (
         <Tag color={status === '启用' ? 'green' : 'default'}>{status}</Tag>
       ),
@@ -147,6 +166,7 @@ function UserList() {
       title: '操作',
       key: 'action',
       width: 180,
+      // record 是当前行完整数据，点击编辑时传给弹窗。
       render: (_, record) => (
         <Space>
           <Button type="link" onClick={() => handleEdit(record)}>
@@ -180,6 +200,7 @@ function UserList() {
         form={form}
         className="user-search-form"
         layout="inline"
+        // onFinish 是 AntD Form 校验通过后的提交回调。
         onFinish={handleSearch}
       >
         <Form.Item name="username" label="用户名">
@@ -210,6 +231,7 @@ function UserList() {
       />
 
       <UserModal
+        // 父组件控制弹窗开关和当前编辑数据，子组件通过回调通知父组件。
         open={modalOpen}
         currentUser={currentUser}
         onCancel={handleCancelModal}

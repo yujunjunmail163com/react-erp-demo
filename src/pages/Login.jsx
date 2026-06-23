@@ -5,12 +5,17 @@ import { useNavigate } from 'react-router-dom'
 const { Title, Text } = Typography
 
 function Login() {
+  // useNavigate 类似 Vue Router 的 router.push，用于在函数组件里做页面跳转。
   const navigate = useNavigate()
 
   const handleFinish = (values) => {
+    // onFinish 只会在 AntD Form 校验通过后触发，values 是表单收集到的数据。
+    // 当前 Demo 用 mock-token 模拟登录态，真实项目这里会调用登录接口。
     localStorage.setItem('token', 'mock-token')
     localStorage.setItem('username', values.username)
     message.success('登录成功')
+
+    // 登录成功后进入后台页。
     navigate('/home')
   }
 
@@ -22,6 +27,7 @@ function Login() {
 
         <Form
           className="login-form"
+          // initialValues 是 AntD Form 的初始值，方便开发阶段快速登录。
           initialValues={{ username: 'admin', password: '123456' }}
           onFinish={handleFinish}
         >

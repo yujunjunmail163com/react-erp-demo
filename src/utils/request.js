@@ -1,8 +1,11 @@
 import axios from 'axios'
 import { message } from 'antd'
 
+// 创建一个独立 axios 实例，后续所有真实接口都可以复用它。
 const request = axios.create({
+  // baseURL 会自动拼到请求地址前面，比如 /api/users。
   baseURL: '/api',
+  // 超时时间，避免请求一直挂起。
   timeout: 5000,
 })
 

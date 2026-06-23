@@ -1,20 +1,21 @@
 import { Form, Input, Modal, Select } from 'antd'
 import { memo, useEffect } from 'react'
 
-
 /**
- * 
- * open：是否开启弹窗
- * currentUser：当前用户数据
- * onCancel：取消回调
- * onSuccess：保存回调
- * 
+ * 用户新增/编辑弹窗。
+ * open：是否显示弹窗，由父组件控制。
+ * currentUser：当前编辑的用户；为 null 时表示新增。
+ * onCancel：子组件通知父组件关闭弹窗。
+ * onSuccess：子组件把表单数据交给父组件保存。
  */
 function UserModal({ open, currentUser, onCancel, onSuccess }) {
+  // AntD Form 实例，负责表单赋值、重置、提交。
   const [form] = Form.useForm()
+
+  // 根据 currentUser 判断弹窗标题和表单行为。
   const isEdit = Boolean(currentUser)
 
-  // 组件挂载后，初始化弹窗数据
+  // 弹窗打开时，根据新增/编辑模式初始化表单数据。
   useEffect(() => {
     if (!open) {
       return
@@ -32,6 +33,7 @@ function UserModal({ open, currentUser, onCancel, onSuccess }) {
   // 表单提交
   const handleFinish = (values) => {
     // 子组件不直接修改父组件列表，而是把表单结果交给父组件处理。
+    // 这就是 React 子传父的常见写法：调用父组件传进来的回调函数。
     onSuccess(values)
   }
 
@@ -42,6 +44,7 @@ function UserModal({ open, currentUser, onCancel, onSuccess }) {
       okText="保存"
       cancelText="取消"
       onCancel={onCancel}
+      // Modal 的确定按钮不在 Form 内部，所以这里手动触发表单提交。
       onOk={() => form.submit()}
       destroyOnHidden
     >
